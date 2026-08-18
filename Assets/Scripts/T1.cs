@@ -28,7 +28,7 @@ public class T1 : MonoBehaviour
 
 
     }
-
+}
 
     public enum TiposPokemon
     {
@@ -56,4 +56,4 @@ public class T1 : MonoBehaviour
 
 
     }
-}
+
