@@ -3,7 +3,7 @@ using static T1;
 
 public class lab : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         Player reptile = new Player();
