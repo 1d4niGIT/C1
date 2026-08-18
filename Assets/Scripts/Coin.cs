@@ -2,23 +2,26 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    
+    Moneda ComponenteMoneda;
+    public int MonedasColeccionadas = 0;
     void Start()
     {
-        Moneda Moneda = new Moneda();
+        ComponenteMoneda = new Moneda();
+       /* Moneda Moneda = new Moneda();
         Moneda Moneda1 = new Moneda();
         Moneda Moneda2 = new Moneda();
         Moneda Moneda3 = new Moneda();
-        Moneda Moneda5 = new Moneda();
+        Moneda Moneda5 = new Moneda();*/
 
     }
-
+    
     public void OnTriggerEnter2D(Collider2D Colisionador)
     {
-        Moneda ComponenteMoneda = GetComponent<Moneda>();
+        Debug.Log("Detectado");
+        
         if (Colisionador.CompareTag("Player"))
         {
-            ComponenteMoneda.ComportamientoMoneda();
+            ComponenteMoneda.ComportamientoMoneda(ref MonedasColeccionadas);
             Destroy(gameObject);
         }
     }
@@ -26,8 +29,8 @@ public class Coin : MonoBehaviour
 public class Moneda
 {
     public int Valor = 10;
-    public int MonedasColeccionadas = 0;
-    public void ComportamientoMoneda()
+
+    public void ComportamientoMoneda(ref int MonedasColeccionadas)
     {
         MonedasColeccionadas += Valor;
         
